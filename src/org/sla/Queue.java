@@ -18,6 +18,11 @@ public class Queue {
 
     // Method
     void put(Object obj) {
+        if (amountData >= 100) {
+            System.out.println("put() failed; please get() some");
+            return;
+        }
+
         queue[putLocation] = obj;
         if (putLocation < 99) {
             putLocation = putLocation + 1;
@@ -28,6 +33,10 @@ public class Queue {
     }
 
     Object get() {
+        if (amountData >= 100) {
+            System.out.println("get() failed; please put () some");
+        }
+
         int oldLocation = getLocation;
         if (getLocation < 99) {
             getLocation = getLocation + 1;
@@ -37,7 +46,7 @@ public class Queue {
         return queue[oldLocation];
     }
 
-    void run()  {
+    /* void run()  {
         Queue queue = new Queue();
         for (int i = 0; i < 100; i = i + 1) {
             queue.put(i);
@@ -47,5 +56,5 @@ public class Queue {
             Object obj = queue.get();
             System.out.println(obj);
         }
-    }
+    }*/
 }
