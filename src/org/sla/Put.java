@@ -3,8 +3,8 @@ package org.sla;
 public class Put implements Runnable {
     Queue sharedQueue;
 
-    Put(Queue queue) {
-        sharedQueue = queue;
+    Put(Queue queue2) {
+        sharedQueue = queue2;
     }
     @Override
     public void run() {

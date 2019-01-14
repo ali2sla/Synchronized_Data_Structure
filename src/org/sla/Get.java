@@ -3,8 +3,8 @@ package org.sla;
 public class Get implements Runnable{
     Queue sharedQueue;
 
-    Get(Queue queue) {
-        sharedQueue = queue;
+    Get(Queue queue2) {
+        sharedQueue = queue2;
     }
     @Override
     public void run() {

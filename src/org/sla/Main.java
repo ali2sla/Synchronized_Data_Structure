@@ -5,10 +5,10 @@ public class Main {
     public static void main(String[] args) {
         int numberQueue = 3;
         for (int o = 0; o < numberQueue; o++) {
-            Queue queue = new Queue();
+            Queue queue2 = new Queue();
 
-            Put put = new Put(queue);
-            Get get = new Get(queue);
+            Put put = new Put(queue2);
+            Get get = new Get(queue2);
 
             Thread putting = new Thread(put);
             putting.start();
