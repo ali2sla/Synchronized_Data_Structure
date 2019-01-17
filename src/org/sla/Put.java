@@ -8,7 +8,7 @@ public class Put implements Runnable {
     }
     @Override
     public void run() {
-        for (int i = 0; i < 100;  i = i + 1) {
+        for (int i = 0; i < 300;  i = i + 1) {
             boolean putSuccess = sharedQueue.put(i);
             while (!putSuccess) {
                 Thread.currentThread().yield();

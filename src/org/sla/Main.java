@@ -3,7 +3,7 @@ package org.sla;
 public class Main {
 
     public static void main(String[] args) {
-        int numberQueue = 3;
+        int numberQueue = 1;
         for (int o = 0; o < numberQueue; o++) {
             Queue queue2 = new Queue();
 

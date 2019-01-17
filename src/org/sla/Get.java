@@ -8,15 +8,16 @@ public class Get implements Runnable{
     }
     @Override
     public void run() {
-        for (int i = 0; i < 100; i = i + 1) {
+        for (int i = 0; i < 300; i = i + 1) {
             Object obj = sharedQueue.get();
 
 
-            while () {
+            while (obj == null) {
                 Thread.currentThread().yield();
                 obj = sharedQueue.get();
-                System.out.println(obj);
             }
+            System.out.println(obj);
+
         }
     }
 }

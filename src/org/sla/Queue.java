@@ -19,7 +19,7 @@ public class Queue {
     // Method
     synchronized boolean put(Object obj) {
         if (amountData >= 100) {
-            System.out.println("put() failed; please get() some");
+            //System.out.println("put() failed; please get() some");
             return false;
         }
 
@@ -35,7 +35,7 @@ public class Queue {
 
     synchronized Object get() {
         if (amountData >= 100) {
-            System.out.println("get() failed; please put () some");
+            //System.out.println("get() failed; please put () some");
             return null;
         }
 
