@@ -10,7 +10,13 @@ public class Get implements Runnable{
     public void run() {
         for (int i = 0; i < 100; i = i + 1) {
             Object obj = sharedQueue.get();
-            System.out.println(obj);
+
+
+            while () {
+                Thread.currentThread().yield();
+                obj = sharedQueue.get();
+                System.out.println(obj);
+            }
         }
     }
 }

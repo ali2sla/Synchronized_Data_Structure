@@ -9,7 +9,11 @@ public class Put implements Runnable {
     @Override
     public void run() {
         for (int i = 0; i < 100;  i = i + 1) {
-            sharedQueue.put(i);
+            boolean putSuccess = sharedQueue.put(i);
+            while (!putSuccess) {
+                Thread.currentThread().yield();
+                putSuccess = sharedQueue.put(i);
+            }
         }
     }
 }

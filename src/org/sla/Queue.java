@@ -17,10 +17,10 @@ public class Queue {
     }
 
     // Method
-    synchronized void put(Object obj) {
+    synchronized boolean put(Object obj) {
         if (amountData >= 100) {
             System.out.println("put() failed; please get() some");
-            return;
+            return false;
         }
 
        queue[putLocation] = obj;
@@ -30,11 +30,13 @@ public class Queue {
         } else {
             putLocation = 0;
         }
+        return true;
     }
 
     synchronized Object get() {
         if (amountData >= 100) {
             System.out.println("get() failed; please put () some");
+            return null;
         }
 
         int oldLocation = getLocation;
